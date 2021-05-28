@@ -1,0 +1,27 @@
+Many different methods to make 2d arrays but for ease try using vectors.
+        vector<vector<char>> maze(rows, vector<char>(cols));
+
+
+Multi-dimensional arrays are not very well supported by the built-in components of C and C++.
+You can pass an N-dimension array only when you know N-1 dimensions at compile time:
+        calculateDeterminantOfTheMatrix( int matrix[][123])
+
+However, the standard library supplies std::vector container, that works very well for multi-dimension arrays: 
+in your case, passing vector<vector<int>> &matrix would be the proper way of dealing with the task in C++.
+
+int calculateDeterminantOfTheMatrix(vector<vector<int>> &matrix) {
+    int res = 0;
+    for (int i = 0 ; i != matrix.size() ; i++)
+        for(int j = 0 ; j != matrix[i].size() ; j++)
+            res += matrix[i][j];
+    return res;
+}
+
+As an added bonus, you wouldn't need to pass dimensions of the matrix to the function: 
+matrix.size() represents the first dimension, and matrix[0].size() represents the second dimension.
+
+// calling a function
+void printMatrix(vector< vector<int> > &matrix)
+and
+
+printMatrix(matrix1); // Function call

@@ -1,0 +1,13 @@
+// Modulo Properties
+
+(a+b)%m = ((a % m)+(b % m)) % m
+
+(a*b)%m = ((a % m)*(b % m)) % m
+
+(a-b)%m = ((a % m) - (b % m) + m) % m
+
+(a/b)%m = ((a % m) * (b(inv) % m) % m
+    // b(inv) => Multiplicative Modulo Inverse
+    // eg. 6 MMI wrt 7 ?
+           (6*y) % 7 = 1 then y =?
+            y = 6   

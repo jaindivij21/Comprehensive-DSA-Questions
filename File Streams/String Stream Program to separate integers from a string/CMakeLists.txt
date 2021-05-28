@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+project(String_Stream_Program_to_separate_integers_from_a_string)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(String_Stream_Program_to_separate_integers_from_a_string main.cpp)

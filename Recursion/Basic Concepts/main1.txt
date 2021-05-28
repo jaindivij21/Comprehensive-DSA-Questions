@@ -1,0 +1,5 @@
+Any code written before the recursive call follows (up)top-bottom approach.
+    I.e. from our current case to base case of our recursive problem.
+
+While, if any code is written after the recursive call then it means, bottom-(top)up approach.
+    I.e from base case to our current case.

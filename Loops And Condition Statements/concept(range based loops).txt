@@ -1,0 +1,3 @@
+(for auto x : y) means you're making a copy of x in each iteration, any changes don't affect the "original x". 
+for(auto& x : y) means you're using the "original x"
+for(const auto& x : y) means you don't make a copy but you can't modify the "original x"

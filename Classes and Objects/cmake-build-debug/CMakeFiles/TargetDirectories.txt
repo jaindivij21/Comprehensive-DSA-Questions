@@ -1,0 +1,3 @@
+D:/Work/Code/Code Projects/C++/Programs/Classes and Objects/cmake-build-debug/CMakeFiles/Classes_and_Objects.dir
+D:/Work/Code/Code Projects/C++/Programs/Classes and Objects/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Work/Code/Code Projects/C++/Programs/Classes and Objects/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/Work/Code/Code Projects/C++/Programs/HourGlass Program/cmake-build-debug/CMakeFiles/HourGlass_Program.dir
+D:/Work/Code/Code Projects/C++/Programs/HourGlass Program/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Work/Code/Code Projects/C++/Programs/HourGlass Program/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,22 @@
+TRANSVERSALS
+
+RECURSIVE:
+1) PREORDER (DEPTH FIRST ORDER) 
+        Root - Left - Right (Print when traversing through the left of the node)
+2) INORDER 
+        Left - Root - Right (Print when traversing through the bottom of the node)
+3) POSTORDER (BOTTOM UP)
+        Left - Right - Root (Print when traversing through the right side of the node)
+4) LEVEL ORDER
+        Subsequent levels are printed (makes use of height of tree)
+
+
+Given inorder transversal, one of the middle element is the root, in preorder the first element while in postorder the last element is the 
+root element!
+
+
+ITERATIVE:
+1) BFS (LEVEL ORDER)
+        Uses Queue
+2) DFS (PREORDER)
+        Uses stack

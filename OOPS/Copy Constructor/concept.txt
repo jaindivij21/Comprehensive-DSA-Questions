@@ -1,0 +1,12 @@
+COPY CONSTRUCTOR
+
+Shallow COPY
+When the copy constructor is not defined by the user and is copied automatically
+
+Deep COPY
+When we copy the constructor by making the copy cons. i.e overriding it.
+
+We use deep copy constructor when we have to use pointers as attributes. This is cuz when
+we use pointers, and call the copy constructrs, both the objects point to the same memory 
+location. Hence if now if you want to change the content of one object, it'll automatically 
+affect the other objects also.

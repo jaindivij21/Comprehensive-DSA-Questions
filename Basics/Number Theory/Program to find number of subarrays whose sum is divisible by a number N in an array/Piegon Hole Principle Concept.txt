@@ -1,0 +1,12 @@
+// Works on the lines of *Subarrays with sum K* problem
+// https://www.youtube.com/watch?v=QM0klnvTQzk
+
+Basically we need to find all the subarrays whose sum when divided by a number k gives 0 remiander
+i.e subarray's sum = x then,
+    x % k = 0
+    then that subarray is selected.
+
+HOW?
+1) Make a cumulative sum array and a hashmap/map indicating the remainders and no. of their occurences.
+2) CONCEPT: if a and b are cumSums for 2 different indexes then (b-a) gives us the sum of that sub array. Now if this (b-a)%k == 0, then that subarray is selected. i.e --> ******* b%k = a%k *******
+3) So lastly calculate remainder hash map and based on that add values to your count variable as soon as you encounter a remainder which you have already seen & *how many times you've it*. 

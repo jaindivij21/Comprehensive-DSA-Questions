@@ -1,0 +1,21 @@
+// Inclusion Exclusion Problem
+// Concept of Sets
+
+// Find the number of numbers between less than equal to N which are divisible by any of the primes below 20
+
+// Concept
+
+For example we need to find all the numbers less than 100 which are divisible by 2 and 3
+Take 2 and 3 in a set then,
+
+A = Nos less than 100 divisible by 2
+B = Nos less than 100 divisible by 3
+
+Total number of subsets = 3
+= 2^2 - 1
+
+Therefore,
+    AUB = Nos less than 100 divisible by both 2 and 3
+        = A + B - AintersectionB (3 subsets)
+
+    // funda here is to add odd terms and subtract even terms 

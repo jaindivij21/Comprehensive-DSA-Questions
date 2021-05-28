@@ -1,0 +1,4 @@
+bfs gives an optimal soln for unweighted graphs or weighted ones with equal weight.
+
+So therefore in order to find shortest path there are other better alogrithms like prims and dijikstras.
+Dijikstra gives and optimal solution for both weighted and unweighter graphs with a TC of O(v+elogv).

@@ -1,0 +1,14 @@
+Vectors
+
+They are nothing but dynamic arrays that is we dont need to define any size for them.
+Whenever the space allocated gets over, it expands itself by *doubling* itself i.e allocated the same amount of memory more to itself jitni abhi 
+uske paas already hai.
+
+
+// Information about reading data from the user
+Doubling is an expensive operation. When you ask the user for the number of elements and then run a loop to input the vector. Every time the vector's size 
+doubles iself - 1,2,4,8,16.. so on. This is not recommended. So whenever you know the rough number of elements in the vector, RESERVE THE SPACE FOR IT.
+
+eg.
+*v.reserve(1000)*
+now take the input.

@@ -1,0 +1,3 @@
+Array of Vector(or any other STL DS) Vs Vector of Vector
+
+https://stackoverflow.com/questions/28712364/difference-between-vector-int-v-and-vector-vectorint-v

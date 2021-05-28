@@ -1,0 +1,4 @@
+https://www.spoj.com/problems/HOLI/
+
+Shuffle all edges such that the weight is maximum
+    We'll apply pigeon hole and maximize the moviement across all edges.

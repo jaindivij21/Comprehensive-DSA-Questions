@@ -1,0 +1,31 @@
+Problem:
+    There is a graph of cities. You need to travel from src to destination and minimimze the cost to travel.    
+    You can travel bw 2 cities through trains and flights whose respective costs are given in the question. Mind that while travelling, 
+    you can take ATMOST one flight. Find and print the minimum cost path.
+
+Solution Concpet:
+    Case 1: 
+        Doesn't take the flight. So compute dijikstra[src-des] using train weights.
+    Case 2:
+        # Let "Src --> X --> Y --> Des" is our path, where X and Y are vertices of our graph.
+        # Now we apply dijikstra from Src to get shortest paths to x (which can be any of the vertex).
+        # We alse appy dijikstra from des to get shortest path to y (we did this to reduce time complexity as we'll have to apply dijistra only once cuz 
+          otherwise there will be so many *y'*s that may be in the optiaml path, hence we would have to apply dijistra N number of times where N is 
+          number of vertices)  
+        # Lastly for every x and y, calculate the min value of these 3 paths.
+
+    ANS: min(case 1 and case 2)
+
+Sample Input
+
+8 10
+Delhi Jaipur 2 6
+Delhi Bhopal 7 14
+Delhi Amritsar 3 8
+Amritsar Jaipur 5 4
+Jaipur Pune 6 5
+Bhopal Mumbai 6 3
+Pune Goa 11 6
+Bhopal Ambala 1 2
+Mumbai Ambala 8 7
+Goa Ambala 13 12

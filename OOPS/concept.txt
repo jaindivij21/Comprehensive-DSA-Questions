@@ -1,0 +1,16 @@
+By default the variable/attributes of the class are private. You need to use the public keyword to change them. 
+
+
+INITIALIZER LIST
+More efficient than making a constructor. The initializer list is just more slightly more efficient because it directly initializes members to their values, 
+instead of default-initializing them and then assigning them (2 steps).
+
+Example
+Point(int i = 0, int j = 0):x(i), y(j) {}
+    /*  The above use of Initializer list is optional as the
+        constructor can also be written as:
+        Point(int i = 0, int j = 0) {
+            x = i;
+            y = j;
+        }
+    */   

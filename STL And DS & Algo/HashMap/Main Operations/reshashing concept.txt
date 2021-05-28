@@ -1,0 +1,25 @@
+// https://www.geeksforgeeks.org/load-factor-and-rehashing/
+
+Load Factor and Rehashing
+
+For insertion of a key(K) – value(V) pair into a hash map, 2 steps are required:
+1) K is converted into a small integer (called its hash code) using a hash function.
+2) The hash code is used to find an index (hashCode % arrSize) and the entire linked list at that index(Separate chaining) 
+   is first searched for the presence of the K already. If found, it’s value is updated and if not, the K-V pair is stored 
+   as a new node in the list.
+
+Sometimes when table size is small and number of entries are large, the load factor can increase i.e. CurrentSize/TableSize.
+Basically, for example 10 LLs in a hash table of 10 indices with 1000 entries. This means each index on average has a LL of 100 elements,
+which is complex. In such situations we do Rehashing.
+      Rehashing means hashing again. Basically, when the load factor increases to more than its pre-defined value 
+(default value of load factor is 0.75), the complexity increases. 
+So to overcome this, the size of the array is increased (doubled) and all the values are hashed again 
+and stored in the new double sized array to maintain a low load factor and low complexity.
+
+After Rehashing (expensive operation  (O(n))):
+   The Total size increases, hence collsions decrease. So hash table searching speed increases.
+
+
+.............
+
+// Rehashing is implemented in INSERT FUNCTION ONLY!

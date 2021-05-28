@@ -1,0 +1,6 @@
+a^5 = (in binary) a^101 = a^4+0+1 
+
+1. so basically, convert power into binary
+2. loop through the power till its greater than 0
+3. if the bit i 0, skip but if its 1 then multiply num's value to the ans
+4. after each iternation move to the next bit in power by left shift and square the num

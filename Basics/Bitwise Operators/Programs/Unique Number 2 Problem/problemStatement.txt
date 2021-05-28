@@ -1,0 +1,10 @@
+// UNIQUE NUMBER 2
+We are given an array of n numbers. All the numbers are present twice except for 2 numbers 
+which are present once. Use bitwise to find those 2 numbers. Print them in incr order
+
+Ex. 
+4
+3 1 2 1
+
+ANS.
+2 3

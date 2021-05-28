@@ -1,0 +1,27 @@
+// UNIQUE PROBLEM 3
+// In an array all elements appear thrice. Find the number that appears once using bitwise operators
+
+Ex.
+7 
+1112223
+
+ANS.
+3
+
+// LOGIC?
+// Calculate the sum of every bit position and store in an array
+// if an element is occuring thrice, the sum of bits at every position of every number will be of the form
+// 3N; however it can also be 3N+1, if that position has a set bit from the number occuring once.
+/*
+ *  EXAMPLE:
+ *  3-011
+ *  3-011
+ *  3-011
+ *  1-001
+ *  -----
+ *    034 (0, 3n, 3n+1)
+ *
+ *  now take modulas by three to get the ans number
+ *    001 = 1
+ *
+ */

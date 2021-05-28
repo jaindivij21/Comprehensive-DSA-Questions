@@ -1,0 +1,42 @@
+PMO gives two random numbers a & b to the Prime Minister. 
+PM Modi wants to visit all countries between a and b (inclusive) , 
+However due to shortage of time he can't visit each and every country , 
+So PM Modi decides to visit only those countries,for which country number has two divisors.
+So your task is to find number of countries Mr. Modi will visit.
+
+Input Format
+The first line contains N , no of test cases. The next N lines contain two integers a and b denoting the range of country numbers.
+
+Constraints
+a<=1000000 & b<=1000000.
+N<=1000
+
+Output Format
+Output contains N lines each containing an answer for the test case.
+
+Sample Input
+2
+1 10
+11 20
+Sample Output
+4
+4
+
+// LOGIC
+
+ Prime Visits
+ https://www.hackerrank.com/contests/launchpad-1-winter-challenge/challenges/prime-visits
+
+ Issue w this problem is that the range of test cases is alot hence we'll get TLE Error
+ Example. Even if we use the most effecient method of finding prime numbers that is prime sieve,
+ it still is alot of time cuz:
+
+ to make the sieve: NloglogN == approx O(N)
+ now we need to count the number of ones in a range. if a = 1 and b = 10^6 = N = b - a, the range becomes 10^6 and therefore
+ total time complexity = O(1000*10^6) = O(10^9) which is huge
+
+ So what to do?
+ Find prime sieve normally in approx O(N) time.
+ Now make another array and store cumulative number of primes uptil that number in O(N)
+ Now in liner time which can be max O(10^6), we can find number of prime numbers between a range just by subtracting their contents in
+ array.

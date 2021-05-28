@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(Difference_Between_strings_and_arrays_in_context_of_pointers)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(Difference_Between_strings_and_arrays_in_context_of_pointers main.cpp)

@@ -1,0 +1,3 @@
+D:/Work/Code/Code Projects/C++/Programs/dynamic memory array allocation (important)/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Work/Code/Code Projects/C++/Programs/dynamic memory array allocation (important)/cmake-build-debug/CMakeFiles/dynamic_memory_array_allocation__important_.dir
+D:/Work/Code/Code Projects/C++/Programs/dynamic memory array allocation (important)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

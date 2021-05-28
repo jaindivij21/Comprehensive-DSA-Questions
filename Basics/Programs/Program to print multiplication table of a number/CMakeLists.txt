@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+project(Program_to_print_multiplication_table_of_a_number)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(Program_to_print_multiplication_table_of_a_number main.cpp)

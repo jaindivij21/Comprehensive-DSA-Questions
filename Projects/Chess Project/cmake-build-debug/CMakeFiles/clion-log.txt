@@ -1,0 +1,4 @@
+D:\Work\Code\Softwares\NetBeans\CLion\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\Work\Code\Code Projects\C++\Programs\Chess Project"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Work/Code/Code Projects/C++/Programs/Chess Project/cmake-build-debug

@@ -1,0 +1,18 @@
+We use the sliding window concept
+
+https://www.youtube.com/watch?v=20v8zSo2v18
+
+// https://www.geeksforgeeks.org/window-sliding-technique/
+// https://www.youtube.com/watch?v=HbbYPQc-Oo4
+
+The window size CAN BE FIXED OR NOT!!
+
+Basically calculate the cumulative sum of the array and put it into somme other array.
+Now just by subtracting theses cumulative sums, we'll get the sum of different subarrays!
+Then we can can check if this sum of subarray is equal ko k or not.
+
+This soln is possible in single transversal but still stake O(n2) time as we need to find if the
+sum exists in our subarray.
+
+To reduce the time complexity we can use a hash map. This data structure can help us compute the same
+in O(n) time.

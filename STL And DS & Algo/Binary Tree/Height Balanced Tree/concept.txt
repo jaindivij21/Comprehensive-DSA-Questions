@@ -1,0 +1,8 @@
+Height Balanced Trees
+
+For every node on the binary tree,
+    if h1 = height of its left sub tree (child)
+       h2 = height of its right sub tree (child)
+then,
+    for the tree to be balanced,
+    |h1-h2| <= 1 i.e difference bw the sub tree heights must be less than or equal to 1.

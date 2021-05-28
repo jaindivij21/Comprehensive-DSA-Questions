@@ -1,0 +1,24 @@
+// Heaps using the priority queues
+/*
+ * Makes getting max and min elements very easy operations
+ * Getting min/max = O(1)
+ * Removing element = O(logN)
+ * Insertion = O(logN)  --- insertion is a little bit costly operation but others are very easy
+ */
+
+ Characterstics
+ 1) Made of a COMPLETE binary trees - all levels are fully filled except the last level. Also the last level must be filled in left to right order. 
+ 2) Min heap or max heap based on whether parents are smaller or bigger respectively.
+
+
+
+ In STL MIN HEAP, if need class funciton or functor:
+
+class carCompare {
+public:
+    // method to overload () operator
+    bool operator()(Car a, Car b) {
+        // for finding the minimum distance cars from origin i.e. maintaining the min heap
+        return a.distance() > b.distance();
+    }
+};

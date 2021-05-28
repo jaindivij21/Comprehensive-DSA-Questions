@@ -1,0 +1,39 @@
+GRAPH DATA STRUCTURE
+
+A Graph is a non-linear data structure consisting of nodes and edges. 
+ The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph.
+
+Graphs are used to solve many real-life problems. Graphs are used to represent networks. The networks may include paths in a city 
+ or telephone network or circuit network. 
+
+Some terminologies:
+ -Adjecent Vertices 
+ -Degree
+ -Path
+ -Connceted Graphs
+ -Subgraph
+ -Connected Component
+ -Tree
+ -Forest
+ -Minimum Spanning Tree
+
+Types of Edges - Unweighted Graph
+    Directed and Undirected Edges
+Types of Edges - Weighted Graphs
+    Undirected weighted edges, directed weighted edges, bidirectional weighted edges.
+
+No of Eges in a Graph
+    -Complete Graph -> (O(v2))
+    -Connected Graph -> O(v-1) to O(v2)
+    -Tree -> O(v-1)
+
+Ways to implement Graphs
+    1) Edge List 
+        {(a,b),(b,c)}
+    2) Adjacency Matrix
+        V x V matrix to store all the edges.
+    3) Adjacency List
+        Most space efficient and least time to compute neighbours. Widely used.
+        0-1,4; 1-2,3,4,0; so on. Can be stored using a hashmap of T and list of T, where T can be any data type. This can also be
+        an array of lists.
+         

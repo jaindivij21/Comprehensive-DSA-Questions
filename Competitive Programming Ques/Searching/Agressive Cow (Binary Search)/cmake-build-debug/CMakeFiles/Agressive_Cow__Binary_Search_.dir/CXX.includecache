@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Work/Code/Code Projects/C++/Programs/Competitive Programming Ques/Agressive Cow (Binary Search)/main.cpp
+algorithm
+-
+iostream
+-
+

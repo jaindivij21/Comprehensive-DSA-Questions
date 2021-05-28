@@ -1,0 +1,3 @@
+D:/Work/Code/Code Projects/C++/Programs/Demonstrate use of pointers/cmake-build-debug/CMakeFiles/Demonstrate_use_of_pointers.dir
+D:/Work/Code/Code Projects/C++/Programs/Demonstrate use of pointers/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Work/Code/Code Projects/C++/Programs/Demonstrate use of pointers/cmake-build-debug/CMakeFiles/rebuild_cache.dir

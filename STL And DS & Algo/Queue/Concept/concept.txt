@@ -1,0 +1,7 @@
+/// Queue
+// Linear Data Structure - First in First Out (FIFO)
+/*
+ *  Push happens at the rear end and the Pop happens at the front end
+ */
+
+// Any data structure can be used to make a queue but most popular is either a vector or a linked list

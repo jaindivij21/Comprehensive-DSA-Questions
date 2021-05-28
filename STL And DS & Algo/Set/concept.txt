@@ -1,0 +1,6 @@
+Set
+Data structure that store only the unique elements.
+It is generally ordered/sorted. However you can use unordered sets. 
+It uses binary trees as the underlying implementation data structure.
+
+You cannot update elements in a set but just add/remove/search for them.

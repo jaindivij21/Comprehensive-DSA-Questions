@@ -1,2 +1,2 @@
 # Comprehensive-C++ Code Library
-Full C++ Code Library including DSA and Projects.
+Full C++ Code Library including DSA and Projects for reference.

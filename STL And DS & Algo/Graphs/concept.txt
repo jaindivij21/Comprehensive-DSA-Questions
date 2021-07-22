@@ -1,10 +1,11 @@
 GRAPH DATA STRUCTURE
 
 A Graph is a non-linear data structure consisting of nodes and edges. 
- The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph.
+ The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two 
+ nodes in the graph.
 
-Graphs are used to solve many real-life problems. Graphs are used to represent networks. The networks may include paths in a city 
- or telephone network or circuit network. 
+Graphs are used to solve many real-life problems. Graphs are used to represent networks. The networks may 
+include paths in a city or telephone network or circuit network. 
 
 Some terminologies:
  -Adjecent Vertices 
@@ -28,12 +29,22 @@ No of Eges in a Graph
     -Tree -> O(v-1)
 
 Ways to implement Graphs
-    1) Edge List 
+    1) Edge List // naive way
         {(a,b),(b,c)}
-    2) Adjacency Matrix
-        V x V matrix to store all the edges.
-    3) Adjacency List
-        Most space efficient and least time to compute neighbours. Widely used.
-        0-1,4; 1-2,3,4,0; so on. Can be stored using a hashmap of T and list of T, where T can be any data type. This can also be
-        an array of lists.
-         
+    2) Adjacency Matrix // less memory efficient but more time efficient
+        V x V matrix to store all the edges.    // vector of vectors
+        // this less memory efficieny can be made a little bit better in case of undirected (or maybe bidirectional) 
+        graphs better since we have chop off half of the matrix (just need the half of it)
+    3) Adjacency List   // more memory efficient but less time efficient
+        Most space efficient. Widely used.
+        0-1,4; 1-2,3,4,0; so on. 
+        - Can be stored using a hashmap of T and list of T, where T can be any data type. This can also be
+          an array of lists. (Any data)
+        - Can also use map<T, unordered_set<T>> or map of vectors   (Any Data)
+        - For integers, we can use a simple vector instead of a hash map i.e. a vector of lists. (integers)
+        - Most simple way to directly use a vector of vectors. (integers)
+        - By far the most common method to make an adjacency list is to use a "Array of Vector" (integers)
+// for contests and for now, stick with vector of vectors or array of vectors if data type is integers.
+
+// PLEASE READ THIS : VERY INTERESTING
+https://stackoverflow.com/questions/35501439/array-of-vectors-or-vector-of-arrays

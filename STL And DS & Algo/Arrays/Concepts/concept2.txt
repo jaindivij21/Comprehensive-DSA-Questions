@@ -1,0 +1,6 @@
+Regarding passing through function.
+
+1) Array can only be passed by reference or essentially the pointers to the first element of the array are passed. Hence, in the questions of recursion and 
+backtracking, we often need to reverse/backtrack what we did to the array after every call.
+
+2) The vectors however can be passed through value or reference. Use '&' to pass by reference.

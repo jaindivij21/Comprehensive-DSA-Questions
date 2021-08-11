@@ -31,9 +31,11 @@ TreeNode *buildTree(TreeNode *root) {
         cin >> left >> right;
         if (left != -1) {
             front->left = new TreeNode(left);
+            q.push(front->left);
         }
         if (right != -1) {
             front->right = new TreeNode(right);
+            q.push(front->left);
         }
     }
     return root;

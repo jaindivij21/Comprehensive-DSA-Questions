@@ -1,20 +1,26 @@
 // Leetcode : Minesweeper
 // https://leetcode.com/problems/minesweeper/
 
-// Time Complexity -> O()
+// Time Complexity -> O(8*m*n) ==> O(m*n)
+// Note that: if you don't pass parameters as pointers or by reference you'll get heap buffer runtime error!
 
 #include<bits/stdc++.h>
 
 using namespace std;
 
+// check for border conditions
+bool isValid(vector<vector<char>> &board, int i, int j) {
+    return (i >= 0 && j >= 0 && i < board.size() && j < board[0].size());
+}
+
 // check all the 8 directions for the mines
-int mines(vector<vector<char>> &board, int i, int j, const int x[], const int y[]) {
+int mines(vector<vector<char>> board, int i, int j, const int *x, const int *y) {
     int ans = 0;
     for (int k = 0; k < 8; k++) {
         // for all the neighboring 8 squares
         int m = i + x[k];
         int n = j + y[k];
-        if (m >= 0 && m < board.size() && n >= 0 && n <= board[0].size()) {
+        if (isValid(board, m, n)) {
             // check if they lie inside of board borders
             if (board[m][n] == 'M')
                 ans++;
@@ -24,7 +30,7 @@ int mines(vector<vector<char>> &board, int i, int j, const int x[], const int y[
 }
 
 // dfs fx
-void dfs(vector<vector<char>> &board, int i, int j, const int x[], const int y[]) {
+void dfs(vector<vector<char>> &board, int i, int j, const int *x, const int *y) {
     // base case
 
     if (board[i][j] != 'M' && board[i][j] != 'E')
@@ -51,8 +57,7 @@ void dfs(vector<vector<char>> &board, int i, int j, const int x[], const int y[]
         for (int k = 0; k < 8; k++) {
             int m = i + x[k];
             int n = j + y[k];
-            if (m >= 0 && m < board.size() && n >= 0 && n <= board[0].size() &&
-                (board[m][n] == 'M' || board[m][n] == 'E')) {
+            if (isValid(board, m, n) && (board[m][n] == 'M' || board[m][n] == 'E')) {
                 dfs(board, m, n, x, y);
             }
         }
@@ -70,11 +75,16 @@ vector<vector<char>> updateBoard(vector<vector<char>> &board, vector<int> &click
 }
 
 int main() {
-    vector<vector<char>> board = {{'B', '1', 'E', '1', 'B'},
-                                  {'B', '1', 'M', '1', 'B'},
-                                  {'B', '1', '1', '1', 'B'},
-                                  {'B', 'B', 'B', 'B', 'B'}};
-    vector<int> click = {1, 2};
+    vector<vector<char>> board = {{'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'},
+                                  {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'M'},
+                                  {'E', 'E', 'M', 'E', 'E', 'E', 'E', 'E'},
+                                  {'M', 'E', 'E', 'E', 'E', 'E', 'E', 'E'},
+                                  {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'},
+                                  {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'},
+                                  {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'},
+                                  {'E', 'E', 'M', 'M', 'E', 'E', 'E', 'E'}};
+
+    vector<int> click = {0, 0};
     updateBoard(board, click);
 
     for (auto i: board) {

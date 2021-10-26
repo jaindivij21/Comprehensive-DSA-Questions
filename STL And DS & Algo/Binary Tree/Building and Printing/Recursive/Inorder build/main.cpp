@@ -8,19 +8,21 @@
  * otherwise cannot be identified. (For this to work there must not be duplicates in the tree)
  */
 
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 
 using namespace std;
 
 // class node
-class node {
+class node
+{
 public:
     int data;
     node *left;
     node *right;
 
-    node(int d) {
+    node(int d)
+    {
         data = d;
         left = nullptr;
         right = nullptr;
@@ -28,12 +30,14 @@ public:
 };
 
 // function to make the tree using inorder
-node *createTreeFromTrav(int *in, int *pre, int s, int e) {
+node *createTreeFromTrav(int *in, int *pre, int s, int e)
+{
     // IMPORTANT
-    static int i = 0;   // make a static variable that stores the current root from preorder (making it static so that it doesnt backtrack during recursion)
+    static int i = 0; // make a static variable that stores the current root from preorder (making it static so that it doesnt backtrack during recursion)
 
     // Base Case
-    if (s > e) {
+    if (s > e)
+    {
         return nullptr;
     }
     // Recursive Case
@@ -42,8 +46,10 @@ node *createTreeFromTrav(int *in, int *pre, int s, int e) {
     // search this index's data in the inorder cuz that'll be the root and to the left of it elements will be left sub tree and to the right elements will be right sub tree
     int index = -1;
     // make a loop to find the root in inorder array
-    for (int j = s; s <= e; j++) {
-        if (in[j] == pre[i]) {
+    for (int j = s; s <= e; j++)
+    {
+        if (in[j] == pre[i])
+        {
             index = j;
             break;
         }
@@ -57,20 +63,26 @@ node *createTreeFromTrav(int *in, int *pre, int s, int e) {
     return root;
 }
 
-void printBfs(node *root) {
+void printBfs(node *root)
+{
     queue<node *> q;
     q.push(root);
     q.push(nullptr);
 
-    while (!q.empty()) {
+    while (!q.empty())
+    {
         node *temp = q.front();
-        if (temp == nullptr) {
+        if (temp == nullptr)
+        {
             cout << endl;
             q.pop();
-            if (!q.empty()) {
+            if (!q.empty())
+            {
                 q.push(nullptr);
             }
-        } else {
+        }
+        else
+        {
             cout << temp->data << " ";
             q.pop();
 
@@ -82,8 +94,8 @@ void printBfs(node *root) {
     }
 }
 
-
-int main() {
+int main()
+{
     // input the arrays
     cout << "Enter the number of elements in the tree" << endl;
     int n;

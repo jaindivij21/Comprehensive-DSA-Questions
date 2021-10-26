@@ -3,12 +3,13 @@
 
 // Somewhat efficient than a normal binary tree as we make use of binary tree properties
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 // tree structure
-class TreeNode {
+class TreeNode
+{
 public:
     int val;
     TreeNode *left;
@@ -23,15 +24,17 @@ public:
 };
 
 // building a tree :: preorder traversal -> Root,Left,Right :: Recursive function
-TreeNode *buildTree(TreeNode *&root) {
+TreeNode *buildTree(TreeNode *&root)
+{
     int element;
     cin >> element;
 
     // base case
     if (element == -1)
         return nullptr;
-        // recursive case
-    else {
+    // recursive case
+    else
+    {
         root = new TreeNode(element);
         root->left = buildTree(root->left);
         root->right = buildTree(root->right);
@@ -39,15 +42,19 @@ TreeNode *buildTree(TreeNode *&root) {
     }
 }
 
-void helper(TreeNode *root, string s, vector<string> &ans) {
+void helper(TreeNode *root, string s, vector<string> &ans)
+{
     // base case
     if (root == nullptr)
         return;
     // recursive cases
-    if (root->left == nullptr && root->right == nullptr) {    // leaf node
+    if (root->left == nullptr && root->right == nullptr)
+    { // leaf node
         s.append(to_string(root->val));
         ans.push_back(s);
-    } else {
+    }
+    else
+    {
         s.append(to_string(root->val) + "->");
     }
     helper(root->left, s, ans);
@@ -55,14 +62,16 @@ void helper(TreeNode *root, string s, vector<string> &ans) {
 }
 
 // apply a normal depth first traversal
-vector<string> binaryTreePaths(TreeNode *root) {
+vector<string> binaryTreePaths(TreeNode *root)
+{
     vector<string> ans;
     string str = "";
     helper(root, str, ans);
     return ans;
 }
 
-int main() {
+int main()
+{
     TreeNode *root = nullptr;
 
     // build tree

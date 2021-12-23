@@ -57,6 +57,36 @@ void takeInput(node *&head)
     }
 }
 
+void deleteNode(node *&head, int ele)
+{
+    if (head == nullptr)
+        return;
+    else
+    {
+        node *prev = nullptr;
+        node *itr = head;
+        while (itr != nullptr)
+        {
+            if (itr->data == ele)
+            {
+                if (itr == head)
+                {
+                    head = itr->next;
+                }
+                else
+                {
+                    prev->next = itr->next;
+                }
+                delete itr;
+                return;
+            }
+            prev = itr;
+            itr = itr->next;
+        }
+        return;
+    }
+}
+
 // print the linked list
 void printList(node *head)
 {
@@ -65,6 +95,40 @@ void printList(node *head)
     {
         cout << ptr->data << " ";
     }
+}
+
+int kFromLast(node *head, int pos)
+{
+    int itr = 1;
+    node *fastPtr = head;
+    node *slowPtr = head;
+    while (fastPtr != nullptr)
+    {
+        fastPtr = fastPtr->next;
+        if (itr > pos)
+        {
+            slowPtr = slowPtr->next;
+        }
+        itr++;
+    }
+    return slowPtr->data;
+}
+
+// 1->2->3->4->5
+// 1<-2<-3<-4<-5
+void reverse(node *&head)
+{
+    node *temp = nullptr;
+    node *prev = nullptr;
+    node *curr = head;
+    while (curr != nullptr)
+    {
+        temp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = temp;
+    }
+    head = prev;
 }
 
 int main()

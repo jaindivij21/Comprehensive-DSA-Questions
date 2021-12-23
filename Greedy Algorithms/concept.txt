@@ -8,4 +8,13 @@ following property:
 If a Greedy Algorithm can solve a problem, then it generally becomes the best method to solve that problem as the Greedy algorithms 
 are in general more efficient than other techniques like Dynamic Programming. But Greedy algorithms cannot always be applied. 
 For example, Fractional Knapsack problem (See this) can be solved using Greedy, but 0-1 Knapsack cannot be solved using Greedy.
+
 Following are some standard algorithms that are Greedy algorithms. 
+Activity Selection Problem.
+Graph Coloring Problem.
+Job Sequencing Problem with Deadlines.
+Find minimum platforms needed to avoid delay in the train arrival.
+Huffman Coding Compression Algorithm.
+Single-Source Shortest Paths — Dijkstra's Algorithm.
+
+https://medium.com/techie-delight/top-7-greedy-algorithm-problems-3885feaf9430

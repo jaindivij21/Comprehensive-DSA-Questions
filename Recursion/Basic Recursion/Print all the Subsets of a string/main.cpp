@@ -9,14 +9,16 @@
  *  https://www.youtube.com/watch?v=mEBEw_xScsE&ab_channel=AnujBhaiya
  */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 // helper function
-void helper(string s, int index, string curr) {
+void helper(string s, int index, string curr)
+{
     // base case
-    if (index == s.length()) {
+    if (index == s.length())
+    {
         // if the index becomes equal to the string length then print whatever is in the current string
         cout << curr << endl;
         return;
@@ -27,15 +29,18 @@ void helper(string s, int index, string curr) {
 }
 
 // main function
-void findAllSubsets(string str) {
+void findAllSubsets(string str)
+{
     string curr = "";
     helper(str, 0, curr);
 }
 
-int main() {
+int main()
+{
     string str;
     cin >> str;
 
     findAllSubsets(str);
 
     return 0;
+}

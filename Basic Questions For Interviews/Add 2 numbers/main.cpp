@@ -73,7 +73,7 @@ int main()
 {
     vector<int> a = {9, 5, 4, 9};
     vector<int> b = {2, 1, 4};
-    cout << add(a, b);
+    cout << add(a, b) << endl;
 
     return 0;
 }

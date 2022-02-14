@@ -7,16 +7,20 @@ using namespace std;
 // sliding window
 int maxProfit(vector<int> &prices)
 {
+    // if only one day, there cannot be any selling, so profit = 0
     if (prices.size() == 1)
         return 0;
-    int maxProfit = 0, start = 0, end = 1;
-    while (end < prices.size())
+
+    // initializers
+    int maxProfit = 0, buy = 0, sell = 1;
+    while (sell <= prices.size() - 1)
     {
-        if (prices[start] < prices[end])
-            maxProfit = max(maxProfit, prices[end] - prices[start]);
+        // if the buying price is less than sell price : profit
+        if (prices[buy] < prices[sell])
+            maxProfit = max(maxProfit, prices[sell] - prices[buy]);
         else
-            start = end;
-        end++;
+            buy = sell;
+        sell++;
     }
     return maxProfit;
 }

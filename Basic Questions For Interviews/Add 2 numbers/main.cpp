@@ -1,78 +1,75 @@
-// add two numbers
-
+// Program to add two numbers
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int add(vector<int> &a, vector<int> &b)
 {
     int ans = 0;
     int mul = 1;
-    int i = a.size() - 1;
-    int j = b.size() - 1; // pointers
-
-    int addition;
     int carry = 0;
-    while (i != -1 && j != -1)
+
+    int p1 = a.size() - 1;
+    int p2 = b.size() - 1;
+
+    while (p1 >= 0 && p2 >= 0)
     {
-        addition = a[i] + b[j] + carry;
-        carry = 0;
-        if (addition >= 10)
+        int add = carry + a[p1] + b[p2];
+        if (add >= 10)
         {
             carry = 1;
-            addition = addition % 10;
+            add %= 10;
         }
-        ans = ans + mul * addition;
+        else
+        {
+            carry = 0;
+        }
+        ans += mul * add;
         mul *= 10;
-        i--;
-        j--;
+        p1--;
+        p2--;
     }
-    if (i == -1 && j == -1)
+    while (p1 >= 0)
     {
-        if (carry == 1)
+        int add = carry + a[p1];
+        if (add >= 10)
         {
-            ans = ans + mul * carry;
+            carry = 1;
+            add %= 10;
         }
-    }
-    else if (i == -1)
-    {
-        while (j != -1)
+        else
         {
-            addition = b[j] + carry;
             carry = 0;
-            if (addition >= 10)
-            {
-                carry = 1;
-                addition = addition % 10;
-            }
-            ans = ans + mul * addition;
-            mul *= 10;
-            j--;
         }
+        ans += mul * add;
+        mul *= 10;
+        p1--;
     }
-    else
+    while (p2 >= 0)
     {
-        while (i != -1)
+        int add = carry + b[p2];
+        if (add >= 10)
         {
-            addition = a[i] + carry;
-            carry = 0;
-            if (addition >= 10)
-            {
-                carry = 1;
-                addition = addition % 10;
-            }
-            ans = ans + mul * addition;
-            mul *= 10;
-            i--;
+            carry = 1;
+            add %= 10;
         }
+        else
+        {
+            carry = 0;
+        }
+        ans += mul * add;
+        mul *= 10;
+        p2--;
     }
+    if (carry == 1)
+        ans += mul * carry;
     return ans;
 }
 
 int main()
 {
-    vector<int> a = {9, 5, 4, 9};
-    vector<int> b = {2, 1, 4};
+    vector<int> a = {9, 9, 9};
+    vector<int> b = {9, 9};
+
     cout << add(a, b) << endl;
 
     return 0;

@@ -24,7 +24,7 @@ int main()
     cin >> n1 >> n2;
 
     int gcdNum = gcd(n1, n2);
-    int lcmNum = lcm(gcd, n1, n2);
+    int lcmNum = lcm(gcdNum, n1, n2);
 
     cout << gcdNum << lcmNum;
 

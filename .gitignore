@@ -3,6 +3,5 @@
 *.cbp
 *.iml
 *.json
-*.c
 *.cmake
 *.txt

@@ -1,0 +1,8 @@
+*.make
+*.xml
+*.cbp
+*.iml
+*.json
+*.c
+*.cmake
+*.txt

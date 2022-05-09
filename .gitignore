@@ -5,3 +5,4 @@
 *.json
 *.cmake
 *.txt
+*.make

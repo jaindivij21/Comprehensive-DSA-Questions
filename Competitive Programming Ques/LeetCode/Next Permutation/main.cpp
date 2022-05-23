@@ -38,7 +38,6 @@ void nextPermutation(vector<int> &nums)
   {
     // just reverse the entire array
     reverse(nums.begin(), nums.end());
-    return;
   }
   else
   {

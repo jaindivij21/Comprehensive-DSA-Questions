@@ -73,7 +73,8 @@ public:
 
     while (!q.empty())
     {
-      for (int i = 0; i < q.size(); i++)
+      int qSize = q.size();
+      for (int i = 0; i < qSize; i++)
       {
         TreeNode *front = q.front();
         q.pop();

@@ -12,7 +12,7 @@
 
 
 
- In STL MIN HEAP, if need class funciton or functor:
+ In STL MIN HEAP, if need class function or functor:
 
 class carCompare {
 public:

@@ -8,10 +8,10 @@ Graphs are used to solve many real-life problems. Graphs are used to represent n
 include paths in a city or telephone network or circuit network. 
 
 Some terminologies:
- -Adjecent Vertices 
+ -Adjacent Vertices 
  -Degree
  -Path
- -Connceted Graphs
+ -Connected Graphs
  -Subgraph
  -Connected Component
  -Tree
@@ -23,7 +23,7 @@ Types of Edges - Unweighted Graph
 Types of Edges - Weighted Graphs
     Undirected weighted edges, directed weighted edges, bidirectional weighted edges.
 
-No of Eges in a Graph
+No of Edges in a Graph
     -Complete Graph -> (O(v2))
     -Connected Graph -> O(v-1) to O(v2)
     -Tree -> O(v-1)

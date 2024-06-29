@@ -7,7 +7,7 @@ typedef long long int ll;
 
 using namespace std;
 
-// Binary Search to find an element in a range
+// Binary Search to check if a given number is a perfect square
 bool binarySearch(ll squareOfElementToFind, ll start, ll end)
 {
   while (start <= end)
@@ -31,8 +31,7 @@ bool judgeSquareSum(int c)
   for (ll i = 0; i * i <= c; i++)
   {
     // Find if an integer j exists such that j = sqrt(c - a^2) or j^2 = c - a^2
-    // Basically we need to find if there is a number j * j is a perfect square
-    // We can find it optimally using binary search by searching for between [0, c - a^2]
+    // Basically we need to find if j^2 is a perfect square
     ll m = c - i * i;
     if (binarySearch(m, 0, m))
     {

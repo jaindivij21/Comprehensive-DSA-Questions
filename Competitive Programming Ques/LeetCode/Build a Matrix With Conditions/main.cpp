@@ -17,98 +17,107 @@ class Solution
       dependency. A topological sort of these graphs will provide the order in which the integers should appear
       in the matrix to satisfy the given conditions. If either graph contains a cycle, it implies that no valid
       matrix can be constructed, and the function should return an empty matrix.
-   Time Complexity:
-   Space Complexity:
   */
 public:
   vector<vector<int>> buildMatrix(int k, vector<vector<int>> &rowConditions, vector<vector<int>> &colConditions)
   {
-    unordered_map<int, vector<int>> rowGraph = buildAdjMatrix(k, rowConditions);
-    unordered_map<int, vector<int>> colGraph = buildAdjMatrix(k, colConditions);
+    // Build adjacency matrices for row and column conditions
+    unordered_map<int, vector<int>> rowAdjMatrix = buildAdjMatrix(k, rowConditions);
+    unordered_map<int, vector<int>> colAdjMatrix = buildAdjMatrix(k, colConditions);
 
-    vector<int> rowOrder = topologicalSort(rowGraph);
-    vector<int> colOrder = topologicalSort(colGraph);
+    // Perform topological sorting on the row and column graphs
+    vector<int> rowOrder = topologicalSort(rowAdjMatrix, k);
+    vector<int> colOrder = topologicalSort(colAdjMatrix, k);
 
-    vector<vector<int>> ans;
+    // If either topological sort fails (cycle detected), return an empty matrix
     if (rowOrder.empty() || colOrder.empty())
     {
-      return ans;
+      return {};
     }
-    else
+
+    // Initialize the matrix with zeros
+    vector<vector<int>> matrix(k, vector<int>(k, 0));
+
+    // Create position mappings from the topological sort results
+    vector<int> rowPosition(k + 1), colPosition(k + 1);
+    for (int i = 0; i < k; i++)
     {
-      ans.resize(k, vector<int>(k, 0));
-
-      vector<int> rowPos(k + 1), colPos(k + 1);
-      for (int i = 0; i < k; i++)
-      {
-        rowPos[rowOrder[i]] = i;
-        colPos[colOrder[i]] = i;
-      }
-
-      for (int num = 1; num <= k; num++)
-      {
-        ans[rowPos[num]][colPos[num]] = num;
-      }
+      rowPosition[rowOrder[i]] = i;
+      colPosition[colOrder[i]] = i;
     }
 
-    return ans;
+    // Place the numbers in the matrix according to the row and column positions
+    for (int num = 1; num <= k; num++)
+    {
+      matrix[rowPosition[num]][colPosition[num]] = num;
+    }
+
+    return matrix;
   }
 
 private:
-  static unordered_map<int, vector<int>> buildAdjMatrix(int k, vector<vector<int>> &rowConditions)
+  // Build adjacency matrix from the given conditions
+  static unordered_map<int, vector<int>> buildAdjMatrix(int k, vector<vector<int>> &conditions)
   {
     unordered_map<int, vector<int>> adjMatrix;
-    for (auto &rowCondition : rowConditions)
+    for (auto &condition : conditions)
     {
-      adjMatrix[rowCondition[0]].emplace_back(rowCondition[1]);
+      adjMatrix[condition[0]].emplace_back(condition[1]);
     }
-
     return adjMatrix;
   }
 
-  static vector<int> topologicalSort(unordered_map<int, vector<int>> &adjMatrix)
+  // Perform topological sorting on the given adjacency matrix
+  static vector<int> topologicalSort(unordered_map<int, vector<int>> &adjMatrix, int k)
   {
-    // Construct an unordered map for inDegrees
-    unordered_map<int, int> inDegrees;
-    for (auto &itr : adjMatrix)
+    unordered_map<int, int> inDegree;
+    for (int i = 1; i <= k; i++)
     {
-      inDegrees[itr.first];
-      for (auto i : itr.second)
+      inDegree[i] = 0;
+    }
+
+    // Calculate in-degrees of all nodes
+    for (auto &node : adjMatrix)
+    {
+      for (int neighbor : node.second)
       {
-        inDegrees[i]++;
+        inDegree[neighbor]++;
       }
     }
 
-    // Insert initial nodes with zero inDegree into a set
-    queue<int> q;
-    for (auto &inDegree : inDegrees)
+    // Collect all nodes with zero in-degree
+    queue<int> zeroInDegreeNodes;
+    for (int i = 1; i <= k; i++)
     {
-      if (inDegree.second == 0)
+      if (inDegree[i] == 0)
       {
-        q.push(inDegree.first);
+        zeroInDegreeNodes.push(i);
       }
     }
 
-    vector<int> ans;
-    while (!q.empty())
+    vector<int> sortedOrder;
+    while (!zeroInDegreeNodes.empty())
     {
-      int front = q.front();
-      q.pop();
-      ans.push_back(front);
+      int node = zeroInDegreeNodes.front();
+      zeroInDegreeNodes.pop();
+      sortedOrder.push_back(node);
 
-      // Find all the nodes to where an edge goes from this front element and reduce their inDegree by 1
-      for (auto i : adjMatrix[front])
+      // Decrease the in-degree of all neighbors
+      for (int neighbor : adjMatrix[node])
       {
-        inDegrees[i]--;
-
-        if (inDegrees[i] == 0)
-          q.push(i);
+        inDegree[neighbor]--;
+        // If in-degree becomes zero, add to queue
+        if (inDegree[neighbor] == 0)
+        {
+          zeroInDegreeNodes.push(neighbor);
+        }
       }
     }
 
-    if (ans.size() == adjMatrix.size())
+    // If sorted order contains all nodes, return it; otherwise, return empty (cycle detected)
+    if (sortedOrder.size() == k)
     {
-      return ans;
+      return sortedOrder;
     }
     else
     {

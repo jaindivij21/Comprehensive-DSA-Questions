@@ -1,5 +1,5 @@
-// Floyd-Warshall Algorithm
-// https://www.youtube.com/watch?v=oNI0rf2P9gE&t=677s
+// Leetcode: Find the City With the Smallest Number of Neighbors at a Threshold Distance
+// https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
 
 #include <iostream>
 #include <vector>
@@ -61,15 +61,46 @@ public:
   }
 };
 
+class Solution
+{
+public:
+  int findTheCity(int n, vector<vector<int>> &edges, int distanceThreshold)
+  {
+    FloydWarshallAlgo fwa(n);
+    fwa.setAdjMatrix(edges);
+
+    vector<vector<int>> shortedPathMatrix = fwa.generateShortestPathMatrix();
+
+    int ansVertex = 0;
+    int minimumVisitedCitiesWithinThreshold = INT_MAX;
+    for (int startVertex = 0; startVertex < shortedPathMatrix.size(); startVertex++)
+    {
+      int visitedCitiesWithinThreshold = 0;
+      for (int endVertex = 0; endVertex < shortedPathMatrix[0].size(); endVertex++)
+      {
+        if (shortedPathMatrix[startVertex][endVertex] <= distanceThreshold)
+          visitedCitiesWithinThreshold++;
+      }
+
+      if (visitedCitiesWithinThreshold <= minimumVisitedCitiesWithinThreshold)
+      {
+        minimumVisitedCitiesWithinThreshold = visitedCitiesWithinThreshold;
+        ansVertex = startVertex;
+      }
+    }
+
+    return ansVertex;
+  }
+};
+
 int main()
 {
   int n = 5;
+  int distanceThreshold = 2;
   vector<vector<int>> edges = {{0, 1, 2}, {0, 4, 8}, {1, 2, 3}, {1, 4, 2}, {2, 3, 1}, {3, 4, 1}};
 
-  FloydWarshallAlgo fwa(n);
-  fwa.setAdjMatrix(edges);
-
-  vector<vector<int>> shortedPathMatrix = fwa.generateShortestPathMatrix();
+  Solution s = Solution();
+  cout << s.findTheCity(n, edges, distanceThreshold) << endl;
 
   return 0;
 }

@@ -1,5 +1,5 @@
-// Leetcode: Most Profitable Path in a Tree
-// https://leetcode.com/problems/most-profitable-path-in-a-tree
+// Leetcode: Next Greater Element III
+// https://leetcode.com/problems/next-greater-element-iii
 
 #include <algorithm>
 #include <iostream>
